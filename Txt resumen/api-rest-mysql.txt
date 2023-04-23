@@ -1,0 +1,88 @@
+CREACION API REST (proyecto api-rest-mysql)
+
+1. DEPENDENCIAS:
+	
+	- Spring Data JPA SQL
+	- MySQL Driver SQL
+	- Spring Web WEB
+	- Spring Boot DevTools DEVELOPER TOOLS
+
+2. APPLICATION.PROPERTIES:
+
+	spring.jpa.hibernate.ddl-auto=update
+	spring.datasource.url=jdbc:mysql://localhost:3306/demo?useUnicode=true&characterEncoding=utf8&createDatabaseIfNotExist=true
+	spring.datasource.username=root
+	spring.datasource.password=0035
+	spring.jpa.show-sql=true
+
+3. PAQUETES Y CLASES:
+
+	- controllers: UserController
+	- dao: UserDao (interfaz), UserDaoImpl
+	- entity: User
+	- service: UserService (interfaz), UserServiceImpl
+	
+4. PAQUETE ENTITY:
+	
+	- En este paquete tenemos nuestro clase User.java y utilizaremos las @anotaciones JPA (@Id, 
+	  @GeneratedValue(strategy=GenerationType.IDENTITY), @Column(name="id")) para relacionarla con nuestra tabla user.
+	- Aquí añadimos atributos, constructores, getters y setters y toString().
+	
+5. PAQUETE DAO:
+	
+	- En la interfaz UserDAO, crearemos los métodos que utilizará la clase UserDAOimpl, para conectarse con nuestra base de datos.
+	
+			public List<User> findAll();
+
+    			public User findById(int id);
+
+    			public void save(User user);
+
+    			public void deleteById(int id);
+    			
+    	- En la clase UserDAOImpl, implementamos la interfaz, le añadiremos la anotación @Repository que indica que es un DAO,y 
+    	  mediante la anotación @Autowired inyectaremos EntityManager, que lo utilizaremos para crear una sessión y poder enviar las 
+    	  peticiones a la base de datos en cada método.
+	
+6. PAQUETE SERVICE
+
+	- Será el que hará de intermediario entre el DAO y el controlador.
+	
+	- La interfaz UserService contiene los metodos que implementara la clase UserServiceImpl:\
+	
+		public List<User> findAll();
+
+    		public User findById(int id);
+
+    		public void save(User user);
+
+    		public void deleteById(int id);
+    		
+    	- Y la clase UserServiceImpl será implementada por la interfaz anterior. Le añadiremos la anotación @Service, para indicar 
+    	  que es un servicio y también de @Autowired para inyectar nuestro DAO y hacer uso de él.
+    	  
+7. PAQUETE CONTROLLERS
+
+	- Tendremos la clase UserController que será la encargada de gestionar las peticiones que se hagan a nuestra API.
+	- Ver los comentarios del proyecto api-rest-mysql.
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

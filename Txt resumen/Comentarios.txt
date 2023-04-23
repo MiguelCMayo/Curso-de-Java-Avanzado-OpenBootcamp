@@ -1,0 +1,14 @@
+COMENTARIOS
+
+//TODO: Cosas por hacer
+
+JAVADOC
+/**
+* Comentarios informativos
+* @see www.google.es\
+* @since 19/03/2021
+*/
+
+En la terminal:
+
+	javadoc src/ejercicio_2/*.java

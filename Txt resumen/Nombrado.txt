@@ -1,0 +1,34 @@
+NOMBRADO
+
+1. Clases e interfaces en Java
+	
+	Los nombres de las clases deben ser sustantivos, en mayúsculas y minúsculas, con la primera letra de cada palabra interna 
+	en mayúscula. El nombre de las interfaces también debe estar en mayúscula (la primera) al igual que los nombres de las 
+	clases. Use palabras completas y debe evitar acrónimos y abreviaturas.
+
+2. Métodos en Java
+	
+	Los métodos deben ser verbos, en mayúsculas y minúsculas, con la primera letra de cada palabra interna (a partir de la 
+	segunda) en mayúscula.
+
+3. Variables en Java
+	
+	Los nombres de las variables deben ser cortos pero significativos.
+
+	No debería comenzar con un guión bajo (‘_’) o caracteres, como por ejemplo, un signo de dólar ‘$’.
+	Debe ser mnemotécnico, es decir, diseñado para indicar al observador casual la intención de su uso.
+	Se deben evitar los nombres de variable de un carácter, excepto para variables temporales.
+	Los nombres comunes para las variables temporales son: i, j, k, m y n para enteros; c, d y e para los caracteres.
+
+4. Variables constantes en Java
+	
+	Debería estar todo en mayúsculas con palabras separadas por guiones bajos (“_”).
+
+	Hay varias constantes utilizadas en clases predefinidas como Float, Long, String, etc.
+
+5. Paquetes en Java
+	
+	El prefijo de un nombre de paquete único siempre se escribe en letras ASCII en minúsculas y debe ser uno de los 
+	nombres de dominio de nivel superior, como por ejemplo: com, edu, gov, mil, net, org.
+
+	Los componentes posteriores del nombre del paquete varían de acuerdo con las convenciones internas de nombres de la organización.

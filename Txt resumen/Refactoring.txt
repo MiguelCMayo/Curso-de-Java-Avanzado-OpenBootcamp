@@ -1,0 +1,65 @@
+REFACTORING
+
+El refactoring es una técnica que permite a quienes desarrollan software, modificar la estructura interna del código 
+fuente sin afectar el resultado que se obtiene al implementarlo. 
+
+Pasos para hacer refactoring en Java
+Para hacer un refactoring en Java, es necesario seguir algunos pasos esenciales y así determinar cuáles estrategias 
+puedes aplicar para lograr el objetivo final.
+
+	1. Examinar el código. Con esto puedes saber si hay problemas que se puedan solucionar al hacer refactoring.
+	2. Establecer si es necesario hacerlo. Aunque de entrada es importante que sepas que siempre se puede mejorar el 
+	código para hacerlo más legible, agregarle más funcionalidad o eliminar fragmentos inútiles. 
+	3. Proyectar la solución. Aquí vas a definir la forma en la que vas a mejorar el código. 
+	4. Hacer las modificaciones necesarias. Es el momento de poner manos a la obra e implementar lo que has determinado 
+	que hay que hacer en el paso anterior.
+	5. Hacer pruebas de control. Este último paso es vital porque te permitirá saber si lo que has hecho está funcionando o no.
+
+Ejemplos de refactoring en Java
+Veamos algunas acciones concretas que te van a ayudar a que tu código Java funcione de manera eficiente:
+
+	- Renombrar
+		Esto se trata de darle nombres adecuados a cada uno de los elementos que componen el código. Así se facilita la 
+		lectura del mismo y, por lo tanto, cuando sea necesario hacer cambios, podrás saber lo que hace cada segmento con 
+		una revisión rápida.
+
+	- Abstraer
+		Implica hacer capas de abstracción para compartir, rehusar o reemplazar código, dependiendo de las necesidades 
+		del programa. Se lleva a la práctica, creando superclases, moviendo o eliminando código, etc.
+
+	- Extraer
+		Cuando el código que has hecho es extenso, es posible que puedas dividir esto en fragmentos más pequeños y manejables. 
+
+		Una función para cada actividad
+			Cada una de las funciones o métodos que conforman el código deben llevar a cabo una sola actividad, así, 
+			será sencillo identificar el lugar exacto donde aplicar los cambios en caso de ser necesarios.
+		Reemplazar estructuras
+			El uso de condicionales (if, switch) puede hacer que el código se torne extenso y complejo. Podrás usar el 
+			polimorfismo para generar clases y manejar estas de acuerdo a la necesidad del código, minimizando la 
+			utilización de condicionales anidadas.
+
+Quienes hacen programas o desarrollan software deben seguir buenas prácticas desde el momento que comienzan su trabajo, 
+eso hará que el proceso de refactoring sea mucho más sencillo de gestionar.
+
+Otro factor importante a tener en cuenta es que cada vez que se apliquen cambios en el código es imprescindible aplicar 
+pruebas unitarias, es decir, hay que verificar que el software efectivamente esté ofreciendo el resultado que sus usuarios 
+esperan obtener al emplearlo.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

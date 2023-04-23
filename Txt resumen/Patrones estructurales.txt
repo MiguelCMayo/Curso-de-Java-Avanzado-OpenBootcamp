@@ -1,0 +1,86 @@
+PATRONES ESTRUCTURALES
+
+DECORATOR:
+	- https://gustavopeiretti.com/patron-de-diseno-decorator-en-java/
+	- El patrón Decorator en Java permite agregar nuevas funcionalidades a las clases sin modificar su estructura.
+	- Creamos la interfaz Watch con el metodo void createFunctionality();
+	- Creamos la clase BasicWatc que implementa la interfaz Watch con su metodo.
+	- Creamos el decorador principal (clase abstracta) WatchDecorator implementando la interfaz:
+	
+		private final Watch watch;
+
+    		public WatchDecorator(Watch watch) {
+        		this.watch = watch;
+    		}
+    		@Override
+    		public void createFunctionality() {
+        		this.watch.createFunctionality();
+    		}
+    		
+    	- Creamos el resto de decoradores con extends al decorador principal que añadirán sus metodos particulares. Con 
+    		su constructor y el metodo super().
+    	- En el main: 
+    		Creamos nuestro objeto concreto y principal BasicWatch que no tiene mucha funcionalidad más que el timer.
+		Creamos un objeto decorador SportWatchDecorator que añade mayores funcionalidades al objeto principal BasicWatch
+		Creamos un objeto decorador LuxuryWatchDecorator que añade mayor funcionalidad al decorador SportWatch que 
+		a su vez añade funcionalidad al objeto BasicWatch.
+		
+
+ADAPTER:
+
+	- El patrón de diseño Adapter te sirve cuando tienes interfaces diferentes o incompatibles entre sí y necesitas que el 
+	  cliente pueda usar ambas del mismo modo.
+	- Las partes de patrón Adapter son:
+		Target: la interfaz que usamos para crear el adapter.
+		Adapter: es la implementación del target y que se ocupará de realizar la adaptación.
+		Client: es el que interactúa y usa el adapter.
+		Adaptee: es la interfaz incompatible que necesitamos adaptar con el adapter.
+	- Creamos el servicio BankService que devuelve BankData
+	- Creamos clase BankData con la info
+	- Creamos la clase User que requiere el cliente
+	- Creamos el target (interfaz UserAdapter) de la cual creamos el Adapter
+	- Creamos la clase UserAdapterImpl, implementando UserAdapter
+	- Creamos el ClientMain que necesita información en la clase User
+
+
+FACADE:
+
+	- Simplifica la complejidad de un sistema mediante una interfaz mas sencilla. Mejora el acceso a nuestro sistema 
+	  logrando que otros sistemas o subsistemas usen un punto de acceso en común que reduce la complejidad, minimizando las 
+	  interacciones y dependencias.
+	- Tenemos entonces en este patrón tres partes:
+			El Cliente que accede al facade.
+			El Facade que accede al resto de funcionalidades y las unifica o simplifica
+			El resto de funcionalidades / subsistemas, que están “atrás” del facade.
+	- Se crean las clases con las funcionalidades (Battery, CPU)
+	- Se crea una interfaz MobileService
+	- Se crean las clases GPSService y WifiService implementando MovileService
+	- Se crea la clase que representa el Mobile. El mobile tiene como atributos la bateria, la cpu y los servicios. 
+	- Se crea el facade que se encargará de simplificar todas la operaciones de encendido y de apagado del teléfono móvil.
+	  Observa que el facade expondrá dos metodos “ON” , “OFF”. Todo el resto ocurre dentro de facade y el cliente no necesita 
+	  entender las acciones ni el orden de encendido.
+	- Probamos la facade desde nuestro ClienteMain.
+	  
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

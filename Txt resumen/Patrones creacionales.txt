@@ -1,0 +1,132 @@
+PATRONES CREACIONALES
+
+SINGLETON:
+
+	- El objetivo es que una clase sólo tenga una instancia viva y garantizar que esto suceda.
+	- El patrón de diseño Singleton tiene muchas formas de implementarse pero veremos aqui la base de sus implementación que consiste en:
+		Dejar el constructor de la clase privado evitando que se pueda usar new
+		Crear una variable static en la clase que guardará la instancia de dicha clase.
+		Crear un método público que nos devolverá siempre la misma instancia de la clase que hemos guardado en la variable.
+	- Se crea una variable privada: private Singleton singleton;
+	- Se crea un constructor vacio: private Singleton(){}
+	- Se crea un metodo llamado getInstance: 
+		public static Singleton getInstance(){
+        		if(singleton == null){
+            		singleton = new Singleton();
+        		}
+
+        		return singleton;
+    		}
+    	
+    	- En el main se llama al metodo getInstance:
+    		Singleton singleton = Singleton.getInstance();
+    		
+FACTORY:
+
+	- Sirve para coexionar una jerarquia de clases
+	- Se crea un interfaz
+	- Se crean las clases implementando la interfaz
+	- Se crea una clase PrecioFactory
+		public class PrecioFactory {
+    			Precio precio;
+
+    			public PrecioFactory() {}
+
+    			public PrecioFactory(String pais){
+        			if(pais.equalsIgnoreCase("Spain")){
+            			System.out.println("Spain, precio en EUR");
+            			precio = new PrecioEUR();
+        			}else if(pais.equalsIgnoreCase("UK")){
+            			System.out.println("UK, precio en GBP");
+            			precio = new PrecioGBP();
+        			}else{
+           			System.out.println("Otro pais, precio en USD");
+            			precio = new PrecioUSD();
+        			}
+    			}
+
+    			public double getPrecio() {
+        			return precio.getPrecio();
+    			}
+			}
+			
+	- En el main se se instancia la clase y se llama al metodo get precio
+			PrecioFactory precio = new PrecioFactory("Spain");
+        		System.out.println(precio.getPrecio());
+
+        		PrecioFactory precio2 = new PrecioFactory("usa");
+       		System.out.println(precio2.getPrecio());
+
+        		PrecioFactory precio3 = new PrecioFactory("UK");
+        		System.out.println(precio3.getPrecio());
+			
+			
+BUILDER:
+
+	- Propone crear un objeto completo a partir de otro más simple simplificando la creación del objeto y ayudándonos a obtener 
+	  un objeto consistente.
+	- Se crea una clase Vehiculo con atributos, constructor vacio y los getters
+	- Se crea la interfaz builder con el metodo Vehiculo build();
+	- Se crea una clase VehiculoBuilder que implementa IBuilder, con los atributos y setters (tipo build) y el metodo de la interfaz:
+		@Override
+    		public Vehiculo build() {
+        		Vehiculo vehiculo = new Vehiculo();
+        		vehiculo.setMarca(this.marca);
+        		vehiculo.setTipo(this.tipo);
+        		vehiculo.setMotor(this.motor);
+        		vehiculo.setPuertas(this.puertas);
+        		return vehiculo;
+    		}
+    		
+    	En el main: 
+    	
+    		Vehiculo builder = new VehiculoBuilder()
+                		.withMarca("Audi")
+                		.withMotor("Diesel")
+                		.withTipo("A5")
+                		.withPuertas(4)
+                		.build();
+
+        	System.out.println("Marca: " + builder.getMarca());
+        	System.out.println("Motor: " + builder.getMotor());
+        	System.out.println("Tipo: " + builder.getTipo());
+        	System.out.println("Puertas: " + builder.getPuertas());
+    		
+    		
+PROTOTYPE:
+
+	- Tiene como objetivo clonarse a si mismo, heredando todos los metodos, propiedades y estados.
+	- Secrea una clase Persona con sus atributos e implementando la interfaz Cloneable y sobreescribiendo el metodo clone()
+	- En el main:
+		 	Persona p1 = new Persona(74999999,35);
+        		Persona p2 = p1.clone();
+
+        		// hemos clonado en el objeto p2 los datos de la Persona p1 , por tanto p2
+        		// tiene como dni 74999999 y una edad de 35
+        		// a continuación vamos a cambiar el dni de p1
+
+        		p1.dni = 25454345;
+
+        		System.out.println("Datos Persona p1: DNI:" + p1.dni + " Edad:" + p1.edad);
+			System.out.println("Datos Persona p2 clon: DNI:" + p2.dni + " Edad:" + p2.edad);
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+	

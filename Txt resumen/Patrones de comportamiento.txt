@@ -1,0 +1,110 @@
+PATRONES DE COMPORTAMIENTO
+
+ITERATOR
+
+	- Proporcionar acceso secuencial a los elementos de un agregado, sin exponer su representación interna.
+	- Se crea una interfaz con los metodos (boolean haymas(); void reinicia(); Usuario siguiente();).
+	- Se crea la clase Usuario con sus atributos, constructor y getters
+	- Se crea la clase Usuarios (se pone el nombre de la otra clase en plural) e implementamos la intefaz UsuarioIterator:
+		- Se crea un arrayList para guardar usuarios
+		- Se crea una variable para guardar la posicion
+		- Se crea un metodo para crear usuarios
+	- En el main creamos usuarios y los recorremos con un while y los metodos creados
+	
+
+OBSERVER
+	
+	- https://pharos.sh/el-patron-de-diseno-del-observador-en-java/
+	- El patrón de diseño del observador es una forma de diseñar un subsistema que permite que muchos objetos respondan 
+	  automáticamente a los cambios de un objeto en particular que está siendo «observado».
+	- Creamos la interfaz Subject (sujeto de observación)
+	- Creamos la interfaz Observer (necesita saber cuándo hay una actualización de su tema).
+	- Creamos la clase Store que implementa la interfaz Subject y creamos un arrayList para guardar clientes
+	- Creamos dos clases, una para cada tipo de clientes implementado la interfaz Observer
+
+
+MEDIATOR
+
+	- Define un objeto que hace de procesador central, coordinando las relaciones entre sus asociados o 
+	  participantes. Permite la interacción de varios objetos, sin generar acoples fuertes en esas relaciones. Todos los 
+	  objetos se comunican con un mediador y es éste quién realiza la comunicación con el resto.
+	- La estructura es la siguiente:
+		- IMediador : Establece las operaciones que pueden realizarse sobre el sistema encapsulado.
+		- Mediador: Implementa las operaciones anteriores y define la interacción de los elementos del 
+		  sistema. Actúa de procesador central.
+		- Colega: Establece las operaciones comunes que todo integrante del sistema debe implementar.
+		- ColegaConcreto: Es el integrante real del sistema que implementa todas las operaciones establecidas por la 
+		  interfaz Colleague y las suyas propias.
+		  
+		- Se crea la interfaz IMediador con su metodo
+		- Se crea la clase ConcreteMediator que implementa la interfaz Mediador.
+		- Se crea la clase abstracta Colega
+		- Se crean las clases ColegaConcreto(1,2,3)
+		
+		
+STATE
+	
+	- Resulta útil cuando necesitamos que un objeto se comporte de forma diferente dependiendo del estado interno
+	  en el que se encuentre en cada momento.
+	- Creamos la clase abstaracta Estado con los metodos abstractos
+	- Creamos la clase Telefono
+	- Creamos la clase EstadoBloqueado extends Estado con sus metodos y constructor por defecto
+	
+		
+STRATEGY
+
+	- https://www.javatutoriales.com/2022/01/patron-de-diseno-strategy.html
+	- Ayuda a definir diferentes comportamientos o funcionalidades que pueden ser cambiadas en tiempo de ejecución. En el 
+	  patrón Strategy creamos diferentes clases que representan estrategias y que podremos usar según alguna variación o input.
+	- Para implementar Strategy debemos realizar los siguientes pasos:
+		1. Definir una interface, o clase abstracta, Strategy. Esta interface puede tener varios métodos que serán los que se 
+		invoquen para ejecutar el algoritmo.
+		2. Crear un conjunto de clases concretas que implementen la interface Strategy. Estas son las que contendrán las 
+		diferentes operaciones lógicas que aplicaremos. En el ejemplo de envíos, las clases concretas serían las diferentes 
+		formas que tenemos de empaquetar los artículos.
+		3. Crear una clase "contexto". Contexto es el nombre formal que se le da a la clase que hace uso de Strategy. En el 
+		ejemplo anterior, el contexto sería el módulo o parte de la aplicación que ejecuta los 4 pasos para realizar el envío.
+		4. Inyectar o crear la instancia de Strategy adecuada para la operación que queremos realizar. La forma en la que se 
+		obtiene esta instancia queda fuera del alcance del patrón, pero podemos usar Factory Method para decidir cuál instancia 
+		debemos usar.
+
+		El paso 4 es donde vemos la utilidad de este patrón. Como mencioné al inicio del tutorial: el objeto Contexto tiene una 
+		relación de composición con el objeto Strategy que usará. Esto quiere decir que tiene una variable del tipo de la interface 
+		Strategy y esto es lo que nos permite usar una instancia u otra. Esto quedará mucho más claro cuando veamos el ejemplo.
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		

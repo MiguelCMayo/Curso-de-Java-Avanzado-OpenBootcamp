@@ -1,0 +1,36 @@
+SERVICIOS REST
+
+- Es una aplicacion web que cumple una serie de patrones determinados.
+
+VERBOS HTTP (Tipo de peticion que enviamos a un servidor utilizando el protoco HTTP)
+
+- GET (Obtener un asuario)
+- POST (Crear un usuario)
+- PUT (Actualizar un usuario)
+- DELETE (Eliminar un usuario)
+
+PROYECTO
+
+1. Crear proyecto nuevo con la dependecia Jersey.
+2. Crear carpeta config con una clase JerseyConfig extends ResourceConfig
+3. En la clase ponemos las anotaciones @ApplicationPath("/") y @Component.
+4. Creamos en la clase un constructor e introducimos: this.packages("com.openbootcamp.demospringrest.controllers");
+5. Creamos la carpeta Controllers con la clase BootcampersController con las anotaciones @Component y @Path("/")
+6. Creamos un metodo public String hola(){return "hola";} con la anotacion @GET
+7. En la web http://localhost:8080/ se deberia de leer "hola"
+8. Crear carpeta models con la clase Bootcamper:
+	- A la clase models se le denomina POJO (Plain Old Java Object)
+9. Crear la carpeta service (es la que conecta el controlador con el modelo) con la clase BootcamperService con la anotacion @Service
+	- Creamos un ArrayList: private List<Bootcamper> bootcampers = new ArrayList<>();
+	- Creamos funciones getAll() y add()
+10. En la clase controller: 
+	- Creamos una variable: private BootcamperService bootcamperService;
+	- Creamos un contructor con las variables como parametros\
+	- Creamos metodo con las anotaciones @GET, @Path("/bootcampers") y @Produces("application/json")
+    					public List<Bootcamper> listarTodos(){
+        					return bootcamperService.getAll();
+    					}
+11. 
+	
+
+
